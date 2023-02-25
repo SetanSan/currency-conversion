@@ -1,1 +1,1 @@
-This is simple currency convertation app. Created using BeautifulSoup and requests libraries.
+This is simple currency convertation CLI app. Created using BeautifulSoup and requests libraries.
