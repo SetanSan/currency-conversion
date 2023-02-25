@@ -22,3 +22,6 @@ if __name__ == '__main__':
     cur_from = input('Enter the name of the currency from which you want to convert:\n')
     cur_to = input('Enter the name of the currency to which you want to convert:\n')
     print(f'{value} {cur_from} is {get_currency_value(value, cur_from, cur_to)} {cur_to}')
+    input('Press Enter for exit')
+
+    
