@@ -10,12 +10,7 @@ def get_currency_value(value, cur_from, cur_to):
     
     if ',' in rate:
         rate = rate.replace(',', '')
-        rate = float(rate.split(' ')[0][:-4])
-        return rate
-
-    else:
-        rate = float(rate.split(' ')[0][:-4])
-        return rate
+    return float(rate.split(' ')[0])
 
 if __name__ == '__main__':
     value = input('Enter the amount of currency:\n')
