@@ -30,10 +30,22 @@ def get_currency_value(value, cur_from, cur_to):
     return float(rate.split(' ')[0])
 
 if __name__ == '__main__':
-    value = input('Enter the amount of currency:\n').upper()
-    cur_from = input('Enter the name of the currency from which you want to convert:\n').upper()
-    cur_to = input('Enter the name of the currency to which you want to convert:\n').upper()
-    rate = get_currency_value(value, cur_from, cur_to)
-    if rate:
-        print(f'{value} {cur_from} is {rate} {cur_to}')
-        input('Press Enter for exit')
+    while True:
+        value = input('Enter the amount of currency:\n')
+        while not value.isnumeric():
+            value = input('Please enter a numeric value:\n')
+        cur_from = input('Enter the name of the currency from which you want to convert:\n').upper()
+        while len(cur_from) != 3:
+            cur_from = input('Please enter a 3-character currency code:\n').upper()
+        cur_to = input('Enter the name of the currency to which you want to convert:\n').upper()
+        while len(cur_to) != 3:
+            cur_to = input('Please enter a 3-character currency code:\n').upper()
+        rate = get_currency_value(value, cur_from, cur_to)
+        if rate:
+            print(f'{value} {cur_from} is {rate} {cur_to}')
+            repeat = input('Would you like to make another conversion? (y/n):\n')
+            while repeat.lower() not in ['y', 'n']:
+                repeat = input('Invalid input. Please enter "y" or "n": ')
+            if repeat.lower() == 'n':
+                break
+    print('Exiting...')
